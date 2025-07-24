@@ -1,10 +1,149 @@
+@use '@abstracts/variables' as v;
+@use '@abstracts/mixins' as mx;
+
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    position: relative;
+    padding-inline: 3rem;
 
-    // &__options ul{
-    //     display: flex;
-    //     gap: 1rem;
-    // }
+    // Toggle (solo mobile)
+    &__toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: block; // visible en móvil
+
+        svg {
+            display: block;
+        }
+
+        @include mx.breakpoint(tablet) {
+            display: none; // hide en desktop
+        }
+    }
+
+    // Contenedor de opciones
+    &__options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .3s ease;
+
+        // Menú abierto
+        &.is-open {
+            max-height: 50rem;
+        }
+
+        @include mx.breakpoint(tablet) {
+            position: static;
+            max-height: none;
+            background: transparent;
+        }
+
+        // Lista interna
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                border-bottom: 1px solid v.$blue;
+                padding-block: 1.5rem;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+
+            li.has-submenu {
+                position: relative;
+
+                .submenu__toggle {
+                    background: none;
+                    border: none;
+                    width: 100%;
+                    text-align: left;
+                    font-size: 1.4rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: .5rem 1rem;
+
+                    svg {
+                        transition: transform .3s ease;
+                    }
+
+                    &[aria-expanded="true"] svg {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                .submenu {
+                    list-style: none;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height .3s ease;
+                    background: v.$blue;
+
+                    li {
+                        padding: .75rem 1.5rem;
+                        border-bottom: 1px solid v.$black;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        a {
+                            color: v.$white;
+                        }
+                    }
+                }
+
+                // Cuando tenga la clase is-open en .submenu, se expande
+                .submenu.is-open {
+                    max-height: 30rem;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: v.$black;
+                padding-left: 1rem;
+                font-size: 1.4rem;
+
+            }
+
+            @include mx.breakpoint(tablet) {
+                display: flex;
+                gap: 1.5rem;
+
+                li.has-submenu {
+                    .submenu {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background: white;
+                        max-height: none;
+                        display: none;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+                    }
+
+                    &:hover .submenu {
+                        display: block;
+                    }
+
+                    .submenu__toggle {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
