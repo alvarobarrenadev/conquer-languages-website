@@ -8,6 +8,7 @@
     padding: 1rem;
     position: relative;
     padding-inline: 3rem;
+    padding-top: 1.5rem;
 
     // Toggle (solo mobile)
     &__toggle {
@@ -31,7 +32,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: white;
+        background-color: white;
         overflow: hidden;
         max-height: 0;
         transition: max-height .3s ease;
@@ -45,6 +46,9 @@
             position: static;
             max-height: none;
             background: transparent;
+            // ← evita que se recorte el menú hijo
+            overflow: visible;
+            z-index: 100;
         }
 
         // Lista interna
@@ -54,75 +58,120 @@
             padding: 0;
 
             li {
+                position: relative;
                 border-bottom: 1px solid v.$blue;
-                padding-block: 1.5rem;
+
+                &:hover {
+                    background-color: v.$blue;
+                }
 
                 &:last-child {
                     border-bottom: none;
                 }
-            }
 
-            li.has-submenu {
-                position: relative;
-
-                .submenu__toggle {
-                    background: none;
-                    border: none;
+                // Estilamos el <a> para que ocupe todo el espacio
+                a {
+                    display: block;
                     width: 100%;
-                    text-align: left;
+                    padding-block: 1.5rem;
+                    padding-inline: 1rem;
                     font-size: 1.4rem;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: .5rem 1rem;
+                    color: v.$black;
+                    text-decoration: none;
 
-                    svg {
-                        transition: transform .3s ease;
-                    }
-
-                    &[aria-expanded="true"] svg {
-                        transform: rotate(180deg);
+                    &:hover {
+                        color: v.$white;
                     }
                 }
 
-                .submenu {
-                    list-style: none;
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height .3s ease;
-                    background: v.$blue;
+                &.has-submenu {
+                    // Reseteamos padding en el li con submenu
+                    padding: 0;
 
-                    li {
-                        padding: .75rem 1.5rem;
-                        border-bottom: 1px solid v.$black;
+                    &:hover svg {
+                        fill: currentColor;
+                    }
 
-                        &:last-child {
-                            border-bottom: none;
+                    .submenu__toggle {
+                        cursor: pointer;
+                        background: none;
+                        border: none;
+                        width: 100%;
+                        text-align: left;
+                        font-family: v.$primary-font;
+                        font-size: 1.4rem;
+                        color: v.$black;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-block: 2rem;
+                        padding-left: 1rem;
+
+                        &:hover {
+                            color: white;
                         }
 
-                        a {
+                        svg {
+                            transition: transform .3s ease;
+                        }
+
+                        // gira la flecha cuando está abierto
+                        &[aria-expanded="true"] svg {
+                            transform: rotate(180deg);
+                            fill: v.$white;
+                        }
+
+                        // Mantiene el texto blanco y fondo azul al abrir
+                        &[aria-expanded="true"] {
                             color: v.$white;
+                            background-color: v.$blue;
                         }
                     }
+
+                    .submenu {
+                        list-style: none;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height .3s ease;
+                        background-color: v.$blue;
+
+                        li {
+                            padding: .75rem 1.5rem;
+                            border-bottom: 1px solid v.$grey;
+
+                            &:hover {
+                                background-color: v.$black;
+                            }
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+
+                            a {
+                                color: v.$white;
+                            }
+                        }
+                    }
+
+                    .submenu.is-open {
+                        max-height: 30rem;
+                    }
                 }
-
-                // Cuando tenga la clase is-open en .submenu, se expande
-                .submenu.is-open {
-                    max-height: 30rem;
-                }
-            }
-
-            a {
-                text-decoration: none;
-                color: v.$black;
-                padding-left: 1rem;
-                font-size: 1.4rem;
-
             }
 
             @include mx.breakpoint(tablet) {
                 display: flex;
                 gap: 1.5rem;
+
+                li {
+                    border-bottom: none;
+
+                    a {
+                        display: inline-block;
+                        padding: 0;
+                        color: v.$black;
+                    }
+                }
 
                 li.has-submenu {
                     .submenu {

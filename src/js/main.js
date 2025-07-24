@@ -10,7 +10,7 @@ mainBtn.addEventListener('click', () => {
   mainMenu.classList.toggle('is-open', !open);
 });
 
-// Submenu “Idiomas”
+// Submenu "Idiomas"
 const submenuBtn = document.querySelector('.submenu__toggle');
 const submenu = document.getElementById(submenuBtn.getAttribute('aria-controls'));
 submenuBtn.addEventListener('click', () => {
