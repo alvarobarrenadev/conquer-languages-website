@@ -10,6 +10,13 @@
     padding-inline: 3rem;
     padding-block: 1.5rem;
     background-color: v.$white;
+    // position: sticky;
+    // top: 0;
+    // z-index: 999;
+    
+    @include mx.breakpoint(tablethorizontal) {
+        padding-block: 1.5rem;
+    }
 
     /* ----------------- Toggle (hamburger) ----------------- */
     &__toggle {
@@ -59,25 +66,24 @@
         }
 
         /* ----------------- Lista interna ----------------- */
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
+        &--list {
+            @include mx.reset-list;
+            
             @include mx.breakpoint(tablethorizontal) {
                 display: flex;
-                // gap: 1.5rem;
+                gap: 1.5rem;
             }
             
             li {
                 position: relative;
                 border-bottom: 1px solid v.$blue;
                 align-content: center;
-                padding: 2rem;
-                // font-weight: 500;
-
+                padding: 1.5rem;
+                
                 @include mx.breakpoint(tablethorizontal) {
                     border-bottom: none;
+                    padding: 1rem 2.5rem;
+
                 }
 
                 &:hover {
@@ -95,8 +101,7 @@
                 a {
                     display: block;
                     width: 100%;
-                    // padding: 1.5rem 1rem;
-                    font-size: 1.4rem;
+                    font-size: 1.6rem;
                     color: v.$black;
                     text-decoration: none;
 
@@ -121,13 +126,17 @@
                         width: 100%;
                         height: 100%;
                         text-align: left;
-                        font-size: 1.4rem;
+                        font-size: 1.6rem;
                         font-family: v.$primary-font;
                         color: v.$black;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        padding: 2rem;
+                        padding: 1.5rem;
+                        
+                        @include mx.breakpoint(tablethorizontal) {
+                            padding: 1rem 2.5rem
+                        }
 
                         &:hover {
                             color: v.$white;
@@ -144,7 +153,6 @@
 
                             svg {
                                 transform: rotate(180deg);
-                                // fill: v.$blue-light;
                             }
                         }
                     }
@@ -163,9 +171,8 @@
                             left: 0;
                             background: white;
                             max-height: none;
-                            display: none;
-                            /* oculto por defecto */
-                            box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+                            display: none; // oculto por defecto
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
                             min-width: 100%;
                         }
 
@@ -174,7 +181,7 @@
                             border-bottom: 1px solid v.$grey;
 
                             @include mx.breakpoint(tablethorizontal) {
-                                // padding: 1.8rem 1.5rem;
+                                padding: 1rem 2.5rem;
                             }
                             
                             &:hover {
@@ -193,6 +200,11 @@
                             
                             a {
                                 color: v.$black;
+                                font-size: 1.4rem;
+
+                                @include mx.breakpoint(tablethorizontal) {
+                                    font-size: 1.4rem;
+                                }
                             }
                         }
                     }
@@ -206,6 +218,15 @@
                     }
                 }
             }
+        }
+    }
+
+    &__cta {
+        display: none;
+         
+        @include mx.breakpoint(tablethorizontal) {
+            display: inline-block;
+            
         }
     }
 }

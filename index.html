@@ -50,7 +50,7 @@
         </button>
 
         <div class="menu__options" id="menu-mobile">
-          <ul class="menu__list">
+          <ul class="menu__options--list">
             <li class="has-submenu">
               <!-- Botón para el submenu -->
               <button class="submenu__toggle" aria-expanded="false" aria-controls="submenu-idiomas" aria-label="Abrir idiomas">
@@ -61,17 +61,30 @@
               </button>
               <!-- Submenu oculto por defecto -->
               <ul class="submenu" id="submenu-idiomas">
-                <li><a href="/ingles">Inglés</a></li>
-                <li><a href="/frances">Francés</a></li>
-                <li><a href="/aleman">Alemán</a></li>
+                <li><a href="ingles.html">Inglés</a></li>
+                <li><a href="#">Francés</a></li>
+                <!-- <li><a href="#">Alemán</a></li> -->
               </ul>
             </li>
             <li><a href="#">Sobre nosotros</a></li>
             <li><a href="#">Blog</a></li>
           </ul>
         </div>
+
+        <a href="#" class="menu__cta btn">Hablemos</a>
       </nav>
     </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__wrapper">
+          <video autoplay muted playsinline loop poster="img/" class="hero__wrapper--video">
+            <source src="video/hero_intro.webm" type="video/webm">
+            Tu navegador no soporta la reproducción de videos.
+          </video>
+        </div>
+      </section>
+    </main>
     <script type="module" src="src/js/main.js"></script>
   </body>
 </html>
