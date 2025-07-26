@@ -10,9 +10,6 @@
     padding-inline: 3rem;
     padding-block: 1.5rem;
     background-color: v.$white;
-    // position: sticky;
-    // top: 0;
-    // z-index: 999;
     
     @include mx.breakpoint(tablethorizontal) {
         padding-block: 1.5rem;
@@ -24,16 +21,45 @@
         border: none;
         cursor: pointer;
         display: block;
-
-        svg {
-            display: block;
-            fill: v.$blue;
+        padding: 0;
+        line-height: 0;
+    
+        .icon-wrapper {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            display: inline-block;
         }
 
-        &[aria-expanded="true"] {
-            
-            svg {
-                fill: v.$dark-blue;
+        .icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.1s ease, transform 0.5s ease;
+            transform-origin: center center;
+        }
+
+        /* Estado cerrado (hamburguesa visible) */
+        .icon--menu {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .icon--close {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.8);
+        }
+
+        /* Cuando el menú está abierto */
+        &.is-open {
+            .icon--menu {
+                opacity: 0;
+                transform: rotate(90deg) scale(0.8);
+            }
+
+            .icon--close {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
             }
         }
 
