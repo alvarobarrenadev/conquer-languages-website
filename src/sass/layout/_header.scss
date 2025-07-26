@@ -14,12 +14,8 @@ header {
     align-items: center;
     position: relative;
     padding-inline: 3rem;
-    padding-block: 1.5rem;
+    padding-block: 1rem;
     background-color: v.$white;
-    
-    @include mx.breakpoint(tablethorizontal) {
-        padding-block: 1.5rem;
-    }
 
     /* ----------------- Toggle (hamburger) ----------------- */
     &__toggle {
