@@ -1,0 +1,62 @@
+@use '@abstracts/variables' as v;
+@use '@abstracts/mixins' as mx;
+
+.home {
+    &__hero {
+        position: relative;
+        height: 91.8dvh;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            // background: rgba(0, 0, 0, 0.7);
+            background: rgba(108, 165, 188, .7);
+        }
+
+        &--video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+
+            &--mobile {
+                display: block;
+                
+                @include mx.breakpoint(tablethorizontal) {
+                    display: none;
+                }
+            }
+            
+            &--desktop {
+                display: none;
+                @include mx.breakpoint(tablethorizontal) {
+                    display: block;
+                }
+            }
+        }
+
+        &--text {
+            position: relative;
+            z-index: 2;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+    }
+    
+    // &__description {}
+}

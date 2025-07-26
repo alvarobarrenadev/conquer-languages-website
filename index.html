@@ -82,15 +82,28 @@
       </nav>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero__wrapper">
-          <video autoplay muted playsinline loop poster="img/" class="hero__wrapper--video">
-            <source src="video/hero_intro.webm" type="video/webm">
-            Tu navegador no soporta la reproducción de videos.
-          </video>
+    <main class="home">
+      <section class="home__hero">
+        <video autoplay muted playsinline loop poster="img/mobile-cover.webp" class="home__hero--video home__hero--video--mobile">
+          <source src="video/intro-mobile.webm" type="video/webm">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        
+        <video autoplay muted playsinline loop poster="img/desktop-cover.webp" class="home__hero--video home__hero--video--desktop">
+          <source src="video/intro-desktop.webm" type="video/webm">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+
+
+        <div class="home__hero--text">
+          <h3>Conquer Languages</h3>
+          <h1>Texto</h1>
+          <a href="#"></a>
         </div>
       </section>
+      
+      <!-- <div class="home__hero_wrapper"></div> -->
+      <!-- <section class="home__description"></section> -->
     </main>
     <script type="module" src="src/js/main.js"></script>
   </body>
