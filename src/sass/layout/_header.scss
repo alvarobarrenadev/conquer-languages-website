@@ -17,7 +17,7 @@ header {
     padding-block: 1rem;
     background-color: v.$white;
 
-    /* ----------------- Toggle (hamburger) ----------------- */
+    // Toggle (hamburger)
     &__toggle {
         background: none;
         border: none;
@@ -41,7 +41,7 @@ header {
             transform-origin: center center;
         }
 
-        /* Estado cerrado (hamburguesa visible) */
+        // Estado cerrado (hamburguesa visible)
         .icon--menu {
             opacity: 1;
             transform: rotate(0deg) scale(1);
@@ -52,7 +52,7 @@ header {
             transform: rotate(-90deg) scale(0.8);
         }
 
-        /* Cuando el menú está abierto */
+        // Cuando el menú está abierto
         &.is-open {
             .icon--menu {
                 opacity: 0;
@@ -70,7 +70,7 @@ header {
         }
     }
 
-    /* ----------------- Contenedor de opciones ----------------- */
+    // Contenedor de opciones
     &__options {
         position: absolute;
         top: 100%;
@@ -93,7 +93,7 @@ header {
             z-index: 100;
         }
 
-        /* ----------------- Lista interna ----------------- */
+        // Lista interna
         &--list {
             @include mx.reset-list;
             
@@ -106,7 +106,7 @@ header {
                 position: relative;
                 border-bottom: 1px solid v.$blue;
                 align-content: center;
-                padding: 1.5rem;
+                padding: 1.5rem 3.3rem;
                 
                 @include mx.breakpoint(tablethorizontal) {
                     border-bottom: none;
@@ -139,7 +139,7 @@ header {
                     }
                 }
 
-                /* ----------- Ítem con submenu ----------- */
+                // Ítem con submenu
                 &.has-submenu {
                     padding: 0;
 
@@ -160,7 +160,7 @@ header {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        padding: 1.5rem;
+                        padding: 1.5rem 3.3rem;
                         
                         @include mx.breakpoint(tablethorizontal) {
                             padding: 1rem 2.5rem
@@ -172,7 +172,7 @@ header {
 
                         svg {
                             transition: transform .3s ease;
-                            fill: currentColor; /* hereda el color */
+                            fill: currentColor; //hereda el color
                         }
 
                         &[aria-expanded="true"] {
@@ -205,7 +205,7 @@ header {
                         }
 
                         li {
-                            padding: 1.5rem 3rem;
+                            padding: 1.5rem 4.5rem;
                             border-bottom: 1px solid v.$grey;
 
                             @include mx.breakpoint(tablethorizontal) {
