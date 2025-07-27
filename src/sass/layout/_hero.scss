@@ -5,7 +5,7 @@
     &__hero {
         position: relative;
         // height: 91.8dvh;
-        height: 100dvh;
+        height: 95dvh;
         overflow: hidden;
 
         &::before {
@@ -58,7 +58,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            height: 100%;
+            height: 90%;
 
             &--subtitle {
                 font-size: 2rem;
@@ -138,6 +138,47 @@
                 @include mx.breakpoint(desktop) {
                     max-width: 55ch;
                     font-size: 2rem;
+                }
+            }
+        }
+
+        &--arrow-down {
+            position: absolute;
+            bottom: 5rem;
+            left: 50%;
+            z-index: 2;
+            transform: translateX(-50%);
+            width: 4.5rem;
+            padding: 1rem;
+            height: auto;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+            background-color: v.$white;
+            border-radius: 100%;
+
+            @include mx.breakpoint(tablet) {
+                bottom: 10rem;
+            }
+
+            @include mx.breakpoint(desktopxl) {
+                bottom: 8rem;
+            }
+
+            @keyframes bounce {
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateX(-50%) translateY(0);
+                }
+        
+                40% {
+                    transform: translateX(-50%) translateY(-0.5rem);
+                }
+        
+                60% {
+                    transform: translateX(-50%) translateY(-0.25rem);
                 }
             }
         }
