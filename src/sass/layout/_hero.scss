@@ -201,7 +201,7 @@
 
         &--title {
             font-size: 3.5rem;
-            font-weight: 400;
+            font-weight: 500;
             margin-inline: auto;
             max-width: 90%;
             line-height: 1.2;
@@ -212,8 +212,9 @@
             }
             
             strong {
-                font-weight: 400;
                 color: v.$blue;
+                font-family: v.$secondary-font;
+                font-style: italic;
             }
         }
 
@@ -279,6 +280,7 @@
 
         &--text {
             padding: 3rem;
+
             @include mx.breakpoint(tablethorizontal) {
                 padding: 1.4rem;
             }
