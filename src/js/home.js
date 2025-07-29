@@ -67,7 +67,7 @@ const counters = document.querySelectorAll(".counter");
 const animate = (el) => {
   const target = +el.getAttribute("data-count");
   const counter = new CountUp(el, target, {
-    duration: 2,
+    duration: 3,
     separator: ",",
   });
 
