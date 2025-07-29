@@ -221,7 +221,6 @@
         &--columns {
             display: flex;
             flex-direction: column;
-            // padding-inline: 2rem;
 
             @include mx.breakpoint(tablethorizontal) {
                 flex-direction: row;
@@ -229,7 +228,7 @@
             }
 
             &--column {
-                margin-bottom: 3.5rem;
+                margin-bottom: 5rem;
                 padding: 1rem;
                 border: 1px solid v.$grey-light;
                 border-radius: .3rem;
@@ -263,7 +262,7 @@
     
     &__conquer_english {
         text-align: center;
-        margin-bottom: 5rem;
+        margin-bottom: 2.5rem;
         
         .wrapper-conquer {
             display: flex;
@@ -375,6 +374,10 @@
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
 
+            @include mx.breakpoint(tablethorizontal) {
+                margin-bottom: 1rem;
+            }
+
             span {
                 font-family: v.$secondary-font;
                 font-weight: 900;
@@ -394,18 +397,15 @@
             padding-block: .2rem;
             margin-inline: auto;
             margin-bottom: 1.5rem;
-
-            @include mx.breakpoint(tablethorizontal) {
-                margin-bottom: 1rem;
-            }
-
+            
             @include mx.breakpoint(tablet) {
                 width: 50%;
                 letter-spacing: .3rem;
             }
-        
+            
             @include mx.breakpoint(tablethorizontal) {
                 width: 40%;
+                margin-bottom: 2rem;
             }
         
             @include mx.breakpoint(desktop) {
@@ -434,6 +434,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            @include mx.breakpoint(desktop) {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+            }
+
             &--article {
                 text-align: left;
                 border: 1px solid v.$grey-light;
@@ -450,8 +455,28 @@
                     &--link {
                         width: 100%;
                         margin-bottom: .8rem;
+                        border-top-left-radius: .3rem;
+                        border-top-right-radius: .3rem;
                     }
                     
+                    .article-wrapper {
+                        padding: .5rem;
+                        padding-bottom: 1.5rem;
+
+                        @include mx.breakpoint(tablet) {
+                            padding-bottom: 2rem;
+                        }
+
+                        @include mx.breakpoint(tablethorizontal) {
+                            padding: 1rem;
+                            padding-bottom: 2rem;
+                        }
+
+                        @include mx.breakpoint(desktop) {
+                            padding: 0.5rem;
+                        }
+                    }
+
                     &--date {
                         color: v.$blue;
                         font-size: 1.4rem;
