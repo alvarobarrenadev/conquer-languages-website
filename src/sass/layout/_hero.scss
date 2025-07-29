@@ -363,7 +363,11 @@
 
     &__blog {
         text-align: center;
-        margin-bottom: 10rem;
+        margin-bottom: 5rem;
+
+        hr {
+            margin-top: 2.5rem;
+        }
 
         &--title {
             margin-inline: auto;
@@ -481,7 +485,6 @@
         text-align: center;
         color: v.$white;
         padding: 3rem;
-        margin-bottom: 10rem;
         background-color: v.$blue;
         background-image: url("/img/home-metrics-background.webp");
         background-position: 0%;
@@ -540,4 +543,6 @@
             }
         }
     }
+
+
 }
