@@ -363,11 +363,7 @@
 
     &__blog {
         text-align: center;
-        margin-bottom: 4rem;
-
-        hr {
-            margin-top: 2em;
-        }
+        margin-bottom: 10rem;
 
         &--title {
             margin-inline: auto;
@@ -476,6 +472,74 @@
                         padding-inline: 1rem;
                         padding-bottom: 1rem;
                     }
+                }
+            }
+        }
+    }
+
+    &__metrics {
+        text-align: center;
+        color: v.$white;
+        padding: 3rem;
+        margin-bottom: 10rem;
+        background-color: v.$blue;
+        background-image: url("/img/home-metrics-background.webp");
+        background-position: 0%;
+        background-repeat: no-repeat;
+        background-size: auto;
+
+        @include mx.breakpoint(tablet) {
+            padding-block: 5rem;
+        }
+
+        @include mx.breakpoint(tablethorizontal) {
+            padding-block: 6rem;
+        }
+
+        &--title {
+            font-weight: 300;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 2.5rem;
+
+            @include mx.breakpoint(tablet) {
+                margin-bottom: 3rem;
+                font-size: 3.5rem;
+            }
+
+            @include mx.breakpoint(desktop) {
+                font-size: 4rem;
+            }
+        }
+
+        &--numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+
+            @include mx.breakpoint(tablet) {
+                flex-direction: row;
+            }
+
+            span:not(.counter) {
+                display: block;
+            }
+
+            &--number {
+                font-size: 4.3rem;
+                font-weight: 800;
+                font-style: italic;
+                font-family: v.$secondary-font;
+            }
+
+            &--description {
+                font-weight: 600;
+                margin-inline: auto;
+                max-width: 60%;
+
+                @include mx.breakpoint(tablethorizontal) {
+                    max-width: 100%;
                 }
             }
         }

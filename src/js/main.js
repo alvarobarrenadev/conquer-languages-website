@@ -1,3 +1,3 @@
 import "@sass/main.scss";
-import "./header.js";
+import "./home.js";
 import "./lenis.js";
