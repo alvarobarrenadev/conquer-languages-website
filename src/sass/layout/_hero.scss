@@ -221,6 +221,8 @@
         &--columns {
             display: flex;
             flex-direction: column;
+            gap: 3rem;
+            margin-bottom: 5rem;
 
             @include mx.breakpoint(tablethorizontal) {
                 flex-direction: row;
@@ -228,7 +230,6 @@
             }
 
             &--column {
-                margin-bottom: 5rem;
                 padding: 1rem;
                 border: 1px solid v.$grey-light;
                 border-radius: .3rem;
