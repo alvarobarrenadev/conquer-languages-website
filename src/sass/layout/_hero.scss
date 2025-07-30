@@ -562,6 +562,7 @@
                 font-weight: 600;
                 margin-inline: auto;
                 max-width: 60%;
+                line-height: 1.5;
 
                 @include mx.breakpoint(tablethorizontal) {
                     max-width: 100%;
