@@ -572,7 +572,8 @@
 
     &__cta {
         text-align: center;
-        padding: 10rem;
+        padding-block: 10rem;
+        padding-inline: 3rem;
         background-image: linear-gradient(167deg, #ffffffed, #a3cce0cc), url("/img/background-cta.webp");
         background-position: 0%;
         background-repeat: no-repeat;
