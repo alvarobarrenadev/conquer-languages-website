@@ -7,6 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
+        conquer_english: resolve(__dirname, "conquer-english.html"),
         // about: resolve(__dirname, 'about.html'),
         // blog: resolve(__dirname, 'blog.html'),
       },
