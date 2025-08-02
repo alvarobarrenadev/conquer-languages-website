@@ -1,0 +1,161 @@
+@use '@abstracts/variables' as v;
+@use '@abstracts/mixins' as mx;
+
+.conquer_english {
+
+    &__hero {
+        position: relative;
+        height: 70dvh;
+        margin-bottom: 5rem;
+
+        &--slide {
+            height: 100%;
+            display: flex;
+            // align-items: center;
+            // justify-content: center;
+            place-content: center;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-color: rgba(0, 0, 0, 0.6); // Overlay oscuro
+                z-index: 1;
+            }
+
+            &--content {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                color: v.$white;
+                padding-inline: 5rem;
+                max-width: 40rem;
+
+                @include mx.breakpoint(tablet) {
+                    max-width: 100%;
+                }
+
+                &--main-title {
+                    font-size: 1.5rem;
+                    font-style: italic;
+                    background-color: rgba(v.$blue, .4);
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    letter-spacing: 0.05rem;
+                    width: 80%;
+                    padding-block: 0.2rem;
+                    margin-inline: auto;
+                    margin-bottom: 1.5rem;
+                    max-width: 20rem;
+
+                    @include mx.breakpoint(tablet) {
+                        font-size: 1.8rem;
+                    }
+                    
+                    @include mx.breakpoint(tablethorizontal) {
+                        font-size: 2rem;
+                        max-width: 30rem;
+                    }
+
+                    @include mx.breakpoint(desktop) {
+                        font-size: 2.2rem;
+                        max-width: 35rem;
+                    }
+                }
+
+                &--title {
+                    font-size: 2rem;
+                    line-height: 1.4;
+                    margin-bottom: 0.5rem;
+
+                    @include mx.breakpoint(tablet) {
+                        font-size: 2.4rem;
+                    }
+                    
+                    @include mx.breakpoint(tablethorizontal) {
+                        font-size: 2.8rem;
+                    }
+                    
+                    @include mx.breakpoint(desktop) {
+                        font-size: 3rem;
+                    }
+                }
+
+                &--description {
+                    color: v.$grey-light;
+                    margin-inline: auto;
+                    
+
+                    @include mx.breakpoint(tablet) {
+                        max-width: 55ch;
+                    }
+
+                    @include mx.breakpoint(tablethorizontal) {
+                        max-width: 100%;
+                        font-size: 1.8rem;
+                    }
+
+                    @include mx.breakpoint(desktop) {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper {
+        &-wrapper {
+            height: 100%;
+        }
+
+        &-pagination {
+            bottom: 2rem !important;
+            color: v.$blue;
+            opacity: .6;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &-bullet {
+                background-color: v.$blue;
+            }
+        }
+
+        &-button-prev,
+        &-button-next {
+            color: v.$blue;
+            transform: scale(0.8);
+            opacity: .6;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+
+
+    // Fondos por slide
+    .slide {
+        &-1 {
+            background-image: url('/img/slide1.webp');
+        }
+
+        &-2 {
+            background-image: url('/img/slide2.webp');
+        }
+    
+        &-3 {
+            background-image: url('/img/slide3.webp');
+        }
+    
+        &-4 {
+            background-image: url('/img/slide4.webp');
+        }
+    }
+}
