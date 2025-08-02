@@ -178,8 +178,6 @@
         }
     }
 
-
-
     // Fondos por slide
     .slide {
         &-1 {
@@ -197,5 +195,9 @@
         &-4 {
             background-image: url('/img/slide4.webp');
         }
+    }
+
+    &__master {
+
     }
 }
