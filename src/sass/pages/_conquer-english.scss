@@ -23,7 +23,7 @@
                 content: '';
                 position: absolute;
                 inset: 0;
-                background-color: rgba(v.$blue-light, 0.65); // Overlay oscuro
+                background-color: rgba(v.$blue-light, .8); // Overlay más oscuro
                 z-index: 1;
             }
 
@@ -68,20 +68,20 @@
                 }
 
                 &--title {
-                    font-size: 2rem;
-                    line-height: 1.4;
-                    margin-bottom: 0.5rem;
+                    font-size: 2.5rem;
+                    line-height: 1.2;
+                    margin-bottom: 1rem;
 
                     @include mx.breakpoint(tablet) {
-                        font-size: 2.4rem;
+                        font-size: 3.3rem;
                     }
                     
                     @include mx.breakpoint(tablethorizontal) {
-                        font-size: 2.8rem;
+                        font-size: 3.5rem;
                     }
                     
                     @include mx.breakpoint(desktop) {
-                        font-size: 3rem;
+                        font-size: 3.8rem;
                     }
                 }
 
@@ -96,11 +96,11 @@
 
                     @include mx.breakpoint(tablethorizontal) {
                         max-width: 100%;
-                        font-size: 1.8rem;
+                        font-size: 2rem;
                     }
 
                     @include mx.breakpoint(desktop) {
-                        font-size: 2rem;
+                        font-size: 2.2rem;
                     }
                 }
             }
@@ -115,7 +115,7 @@
         &-pagination {
             bottom: 2rem !important;
             color: #305281;
-            opacity: .6;
+            opacity: .8;
 
             &:hover {
                 opacity: 1;
@@ -130,10 +130,50 @@
         &-button-next {
             color: #305281;
             transform: scale(0.8);
-            opacity: .6;
+            opacity: .8;
 
             &:hover {
                 opacity: 1;
+            }
+        }
+
+        &-button-prev {
+            left: 1rem;
+
+            @include mx.breakpoint(tablet) {
+                left: 2rem;
+            }
+            
+            @include mx.breakpoint(tablethorizontal) {
+                left: 3rem;
+            }
+
+            @include mx.breakpoint(desktop) {
+                left: 5rem;
+            }
+            
+            @include mx.breakpoint(desktopxl) {
+                left: 10rem;
+            }
+        }
+        
+        &-button-next {
+            right: 1rem;
+
+            @include mx.breakpoint(tablet) {
+                right: 2rem;
+            }
+            
+            @include mx.breakpoint(tablethorizontal) {
+                right: 3rem;
+            }
+            
+            @include mx.breakpoint(desktop) {
+                right: 5rem;
+            }
+            
+            @include mx.breakpoint(desktopxl) {
+                right: 10rem;
             }
         }
     }
