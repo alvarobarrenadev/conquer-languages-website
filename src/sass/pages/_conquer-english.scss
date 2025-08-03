@@ -207,25 +207,96 @@
     }
 
     &__master {
+        margin-bottom: 10rem;
 
-        &--video {
-
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            @include mx.breakpoint(tablethorizontal) {
+                flex-direction: row;
+                gap: 3rem;
+            }
         }
 
         &--text {
             text-align: center;
             margin-bottom: 5rem;
 
-            &--title {
-                margin-bottom: 1rem;
+            @include mx.breakpoint(tablethorizontal) {
+                max-width: 50%;
             }
 
+            &--title {
+                margin-bottom: .5rem;
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                color: v.$blue;
+
+                @include mx.breakpoint(tablet){
+                    font-size: 1.8rem;
+                }
+                
+            }
+            
             &--subtitle {
                 margin-bottom: 2rem;
+                line-height: 1.4;
+                font-size: 2.4rem;
+                font-weight: 900;
+
+                @include mx.breakpoint(tablet){
+                    font-size: 3rem;
+                    margin-inline: auto;
+                    max-width: 30ch;
+                }
+
+                @include mx.breakpoint(tablethorizontal) {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        &--video {
+            margin-bottom: 5rem;
+
+            @include mx.breakpoint(tablet) {
+                padding-inline: 7rem;
             }
 
-            &--cta {
+            @include mx.breakpoint(tablethorizontal) {
+                max-width: 50%;
+                padding-inline: 0;
+            }
+        }
 
+        &--features {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            @include mx.breakpoint(tablethorizontal) {
+                flex-direction: row;
+                gap: 3rem;
+            }
+
+            &--feature {
+                margin-bottom: 2.5rem;
+
+                &--logo {
+                    margin-bottom: .5rem;
+                }
+
+                &--title {
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    line-height: 1.5;
+                }
+
+                &--description {
+                    color: v.$grey;
+                }
             }
         }
     }
