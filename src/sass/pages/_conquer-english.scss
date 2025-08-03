@@ -104,8 +104,13 @@
                     }
                 }
 
-                &--btn {
+                &--cta {
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    background-color: v.$blue-dark;
+
+                    &:hover {
+                        background-color: rgba(v.$blue-dark, .8);
+                    }
                 }
             }
         }
@@ -203,5 +208,25 @@
 
     &__master {
 
+        &--video {
+
+        }
+
+        &--text {
+            text-align: center;
+            margin-bottom: 5rem;
+
+            &--title {
+                margin-bottom: 1rem;
+            }
+
+            &--subtitle {
+                margin-bottom: 2rem;
+            }
+
+            &--cta {
+
+            }
+        }
     }
 }
