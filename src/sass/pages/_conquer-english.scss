@@ -217,6 +217,7 @@
             @include mx.breakpoint(tablethorizontal) {
                 flex-direction: row;
                 gap: 3rem;
+                margin-bottom: 5rem;
             }
         }
 
@@ -226,6 +227,7 @@
 
             @include mx.breakpoint(tablethorizontal) {
                 max-width: 50%;
+                margin-bottom: 2rem;
             }
 
             &--title {
@@ -297,6 +299,76 @@
                 &--description {
                     color: v.$grey;
                 }
+            }
+        }
+    }
+
+    &__methodology {
+        background-color: v.$bg-grey;
+        padding-block: 5rem 10rem;
+        
+        &--content {
+            text-align: center;
+            margin-bottom: 5rem;
+
+            &--title {
+                line-height: 1.2;
+                font-size: 3rem;
+                font-weight: 300;
+                margin-bottom: 3rem;
+
+                @include mx.breakpoint(tablet) {
+                    font-size: 3.8rem;
+                }
+
+                span {
+                    font-family: v.$secondary-font;
+                    font-style: italic;
+                    font-weight: 700;
+                    font-size: 3.5rem;
+
+                    @include mx.breakpoint(tablet) {
+                        font-size: 4.2rem;
+                    }
+                }
+            }
+
+            &--description {
+                color: v.$grey;
+                margin-inline: auto;
+                
+                @include mx.breakpoint(tablet) {
+                    max-width: 95%;
+                }
+                
+                @include mx.breakpoint(desktop) {
+                    max-width: 90%;
+                }
+            }
+
+            .bottom-space {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &--img {
+            display: flex;
+            place-content: center;
+            margin-inline: auto;
+            background-image: url("/img/methodology-class.webp");
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 10rem;
+            max-width: 90%;
+            border-radius: 2rem;
+
+            @include mx.breakpoint(tablethorizontal) {
+                max-width: 70%;
+            }
+
+            @include mx.breakpoint(desktop) {
+                max-width: 60%;
             }
         }
     }
