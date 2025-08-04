@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .map(video => new Plyr(video, {
       controls: [
         'play-large', // botón grande al centro
-        'play', 'progress', 'current-time',
-        'mute', 'volume', 'settings',
+        'play', "current-time",
+        'mute', 'settings',
         'fullscreen'
       ],
       settings: ['quality', 'speed', 'loop']
