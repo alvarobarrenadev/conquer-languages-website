@@ -562,5 +562,18 @@
                 }
             }
         }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.3rem;
+            top: 2.3rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: v.$white;
+            border: 3px solid v.$blue;
+            border-radius: 50%;
+            z-index: 2;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
     }
 }

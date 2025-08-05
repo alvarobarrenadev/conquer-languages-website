@@ -2,6 +2,7 @@ import "@sass/main.scss";
 import "./home.js";
 import "./lenis.js";
 import "./conquer-english.js";
+import "./timeline-dot.js";
 
 // Reproductor Plyr
 import 'plyr/dist/plyr.css'; // estilos por defecto de Plyr
