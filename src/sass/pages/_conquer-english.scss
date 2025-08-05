@@ -470,13 +470,51 @@
 
         &_timeline {
             text-align: left;
+            position: relative;
+            padding-left: 0.3rem;
+            border-left: 3px solid v.$blue;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
 
             &--box {
+                position: relative;
                 background-color: v.$white;
                 box-shadow: 0px 5px 20px rgba(0, 0, 0, .05);
                 border-radius: .6rem;
                 padding: 2rem;
-                margin-bottom: 3rem;
+                margin-left: 1rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: -2.5rem;
+                    top: 2rem;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    background-color: v.$white;
+                    border: 3px solid v.$blue;
+                    border-radius: 50%;
+                    z-index: 2;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: -1.6rem;
+                    top: 3.5rem;
+                    height: calc(100% - 3.5rem);
+                    width: .3rem;
+                    background-color: v.$blue;
+                }
+
+                &:last-child::after {
+                    content: none;
+                }
+
+                @include mx.breakpoint(tablet) {
+                    padding: 2rem 2.5rem;
+                }
 
                 &--title {
                     font-size: 2rem;
@@ -509,17 +547,15 @@
                             color: v.$blue;
                         }
 
-                        &:nth-child(2) {
-                            padding-left: .5em;
-                        }
-                        
+                        &:nth-child(2),
                         &:nth-child(3) {
                             padding-left: .5em;
                         }
                     }
 
                     cite {
-                        text-align: right;
+                        display: block;
+                        margin-top: 1.5rem;
                         font-weight: 300;
                         color: v.$blue;
                     }
