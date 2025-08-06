@@ -658,4 +658,87 @@
             }
         }
     }
+    
+    &__meetAndy {
+        padding-block: 5rem;
+        text-align: center;
+
+        @include mx.breakpoint(tablethorizontal) {
+            text-align: left;
+        }
+        
+        .wrapper-meetAndy {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            
+            @include mx.breakpoint(tablethorizontal) {
+                flex-direction: row;
+                gap: 5rem;
+            }
+        }
+
+        &--text {
+            max-width: 100%;
+
+            @include mx.breakpoint(tablethorizontal) {
+                max-width: 50%;
+                margin-bottom: 0;
+            }
+
+            &--subtitle {
+                color: v.$blue;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+
+                @include mx.breakpoint(tablethorizontal) {
+                    font-size: 2rem;
+                }
+            }
+
+            &--title {
+                font-family: v.$secondary-font;
+                font-weight: 700;
+                font-size: 4rem;
+                line-height: 1.1;
+                font-style: italic;
+                margin-bottom: 2.5rem;
+
+                @include mx.breakpoint(tablethorizontal) {
+                    font-size: 5.5rem;
+                }
+
+                span {
+                    text-transform: uppercase;
+                }
+            }
+
+            &--description {
+                margin-inline: 1rem;
+                margin-bottom: 1.5rem;
+
+                @include mx.breakpoint(tablet) {
+                    margin-inline: 2rem;
+                }
+                
+                @include mx.breakpoint(tablethorizontal) {
+                    margin-inline: 0;
+                }
+            }
+        }
+
+        &--img {
+            max-width: 100%;
+            border-radius: .8rem;
+            margin-inline: auto;
+
+            @include mx.breakpoint(tablet) {
+                max-width: 40rem;
+            }
+            
+            @include mx.breakpoint(tablethorizontal) {
+                max-width: 40%;
+            }
+        }
+    }
 }
