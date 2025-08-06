@@ -18,7 +18,7 @@ function handleScroll() {
       dot.style.backgroundColor = "white";
     }
 
-    // “Fusión” entre dots: cuando están cerca
+    // Fusión entre dots: cuando están cerca
     if (index < boxes.length - 1) {
       const nextBox = boxes[index + 1];
       const nextDot = nextBox.querySelector(".timeline-dot");

@@ -5,7 +5,7 @@
 
     &__hero {
         position: relative;
-        height: 70dvh;
+        height: 70vh;
         margin-bottom: 5rem;
 
         &--slide {
@@ -422,6 +422,7 @@
             }
 
             &--article {
+                flex: 1;
 
                 &--title {
                     text-transform: uppercase;
@@ -574,6 +575,87 @@
             border-radius: 50%;
             z-index: 2;
             transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+    }
+
+    &__foryou {
+        background-color: v.$black;
+        padding: 5rem 1rem;
+        
+        .wrapper-articles {
+            display: flex;
+            gap: 3rem;
+            flex-direction: column;
+
+            @include mx.breakpoint(tablet) {
+                flex-direction: row;
+            }
+            
+            article {
+                flex: 1;
+                background-color: v.$bg-grey-dark;
+                padding: 3rem;
+                border-radius: .5rem;
+                
+                @include mx.breakpoint(tablethorizontal) {
+                    padding: 3rem 5rem;
+                }
+            }
+        }
+        
+        ul {
+            @include mx.reset-list;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                position: relative;
+                padding-left: 2.8rem;
+                margin-bottom: 1.6rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0.2rem;
+                    width: 2rem;
+                    height: 2rem;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+        
+        &__isForyou {
+            color: v.$white;
+            
+            &--title {
+                color: v.$blue;
+                text-align: center;
+                text-transform: uppercase;
+                margin-bottom: 3rem;
+
+            }
+
+            &--list li::before {
+                background-image: url("/icons/check-list.svg");
+            }
+        }
+        
+        &__isNotForyou {
+            color: v.$white;
+            
+            &--title {
+                color: v.$white;
+                text-align: center;
+                text-transform: uppercase;
+                margin-bottom: 3rem;
+            }
+            
+            &--list li::before {
+                background-image: url("/icons/uncheck-list.svg");
+            }
         }
     }
 }
