@@ -274,6 +274,10 @@
             border-radius: .3rem;
             margin-bottom: 5rem;
 
+            div {
+                flex: 1;
+            }
+
             @include mx.breakpoint(tablethorizontal) {
                 flex-direction: row;
                 border-radius: .3rem;
@@ -544,6 +548,10 @@
             flex-direction: column;
             gap: 2rem;
             justify-content: center;
+
+            div {
+                flex: 1;
+            }
 
             @include mx.breakpoint(tablet) {
                 flex-direction: row;
