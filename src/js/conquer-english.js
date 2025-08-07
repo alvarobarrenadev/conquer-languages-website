@@ -27,3 +27,24 @@ new Swiper(".conquer_english__hero", {
   effect: "fade",
   speed: 800,
 });
+
+// Accordion FAQ
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".accordion-item");
+
+  items.forEach((item) => {
+    const header = item.querySelector(".accordion-header");
+
+    header.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      // Cierra todos
+      items.forEach((i) => i.classList.remove("active"));
+
+      // Abre el actual si no estaba abierto
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    });
+  });
+});

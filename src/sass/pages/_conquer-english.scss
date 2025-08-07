@@ -741,4 +741,123 @@
             }
         }
     }
+
+    &__faq {
+        background-color: v.$bg-grey;
+        padding-block: 3rem 5rem;
+
+        @include mx.breakpoint(tablethorizontal) {
+            padding-block: 5rem;
+        }
+        
+        &--title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+
+            @include mx.breakpoint(tablethorizontal) {
+                margin-bottom: 4rem;
+            }
+
+            @include mx.breakpoint(tablethorizontal) {
+                margin-bottom: 5rem;
+            }
+        }
+
+        .accordion {
+            @include mx.breakpoint(tablet) {
+                max-width: 65rem;
+                margin-inline: auto;
+            }
+
+            @include mx.breakpoint(tablethorizontal) {
+                max-width: 80rem;
+            }
+
+            @include mx.breakpoint(desktop) {
+                max-width: 100rem;
+                margin-inline: auto;
+            }
+
+            &-item {
+                
+                @include mx.breakpoint(tablethorizontal) {
+                    margin-bottom: 1rem;
+                }
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+
+                &.active {
+                    margin-bottom: 1rem;
+
+                    @include mx.breakpoint(tablet) {
+                        margin-bottom: 2rem;
+                    }
+
+                    .accordion-body {
+                        max-height: 50rem;
+                        background-color: v.$grey-light;
+                        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.15);
+                    }
+                }
+            }
+
+            &-header {
+                width: 100%;
+                padding: 2rem;
+                text-align: left;
+                font-weight: 700;
+                color: v.$black;
+                background-color: v.$blue-light;
+                font-size: 1.6rem;
+                font-family: v.$primary-font;
+                border: none;
+                cursor: pointer;
+                transition: background-color .3s ease;
+
+                @include mx.breakpoint(tablethorizontal) {
+                    font-size: 1.8rem;
+                }
+
+                @include mx.breakpoint(desktop) {
+                    font-size: 2rem;
+                }
+
+                &:hover {
+                    background-color: v.$blue;
+                }
+            }
+
+            &-body {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height .3s ease;
+                color: v.$black;
+                padding: .5rem 2rem;
+
+                p, ul {
+                    margin: 1rem 0;
+
+                    @include mx.breakpoint(tablethorizontal) {
+                        margin: 0.5rem 0;
+                    }
+                }
+
+                p:first-child {
+                    margin-top: .5rem;
+                }
+
+                ul {
+                    @include mx.reset-list;
+                    padding-left: 1rem;
+                    
+                    li {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
 }
