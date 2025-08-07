@@ -683,7 +683,12 @@
 
             @include mx.breakpoint(tablethorizontal) {
                 max-width: 50%;
+                margin-inline: 1rem;
                 margin-bottom: 0;
+            }
+
+            @include mx.breakpoint(desktop) {
+                margin-inline: 2rem;
             }
 
             &--subtitle {
