@@ -179,4 +179,58 @@
             }
         }
     }
+
+    &__joinCL {
+        background-image: linear-gradient(113deg, v.$blue, #00000029), url("/img/join_cl-about_us.webp");
+        background-position: center 0%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-block: 12rem;
+        
+        @include mx.breakpoint(tablethorizontal) {
+            background-position: center 25%;
+        }
+
+        @include mx.breakpoint(desktop) {
+            background-position: center 50%;
+        }
+
+        &--content {
+            color: v.$white;
+            text-align: center;
+
+            &--pretitle {
+                font-weight: 300;
+                margin-bottom: 2rem;
+            }
+
+            &--title {
+                font-size: 3.5rem;
+                line-height: 1.1;
+                margin-bottom: 2rem;
+            }
+
+            &--description {
+                max-width: 85%;
+                margin-inline: auto;
+                margin-bottom: 2rem;
+
+                @include mx.breakpoint(tablethorizontal) {
+                    max-width: 80%;
+                }
+                
+                @include mx.breakpoint(desktop) {
+                    max-width: 60%;
+                }
+            }
+
+            &--cta {
+                background-color: v.$black;
+
+                &:hover {
+                    background-color: v.$blue-dark;
+                }
+            }
+        }
+    }
 }
