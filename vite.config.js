@@ -9,7 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         conquer_english: resolve(__dirname, "conquer-english.html"),
         about: resolve(__dirname, 'sobre-nosotros.html'),
-        // blog: resolve(__dirname, 'blog.html'),
+        blog: resolve(__dirname, 'blog.html'),
       },
     },
   },

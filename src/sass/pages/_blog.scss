@@ -1,0 +1,81 @@
+@use '@abstracts/variables' as v;
+@use '@abstracts/mixins' as mx;
+
+.blog {
+  &__featured {
+    margin-top: 3rem;
+
+    &_intro {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      &--title {
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: v.$blue;
+        margin-bottom: 2rem;
+
+        @include mx.breakpoint(tablet) {
+          font-size: 1.7rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        @include mx.breakpoint(tablethorizontal) {
+          font-size: 1.8rem;
+        }
+        
+        @include mx.breakpoint(desktop) {
+          font-size: 2rem;
+        }
+
+        strong {
+          font-weight: 700;
+        }
+      }
+      
+      &--subtitle {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.1;
+
+        @include mx.breakpoint(desktop) {
+          font-size: 4.2rem;
+        }
+      }
+    }
+
+    &_article {
+      
+      a {
+        text-decoration: none;
+        color: v.$black;
+      }
+
+      &--img {
+        max-width: 100%;
+        border-radius: 1rem;
+      }
+      
+      &--content {
+
+        &--title {
+
+        }
+
+        &--description {
+
+        }
+
+        &--CL {
+
+        }
+
+        &--date {
+
+        }
+      }
+    }
+  }
+}
