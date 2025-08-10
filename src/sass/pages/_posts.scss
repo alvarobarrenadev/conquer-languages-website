@@ -51,6 +51,14 @@
       .articles {
         margin-bottom: 2rem;
 
+        h3 {
+          margin-bottom: 0.5rem;
+        }
+
+        h4 {
+          margin-bottom: 1rem;
+        }
+
         p {
           color: v.$grey;
         }
