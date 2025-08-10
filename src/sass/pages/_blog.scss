@@ -90,6 +90,8 @@
 
       &--img {
         width: 100%;
+        overflow: hidden;
+        border-radius: 1rem;
 
         img {
           width: 100%;
