@@ -10,6 +10,7 @@
     text-align: center;
     height: 60vh;
     color: v.$white;
+    margin-bottom: 5rem;
 
     &--title {
       font-size: 3.4rem;
@@ -31,6 +32,34 @@
     &--date {
       font-size: 1.5rem;
       font-weight: 400;
+    }
+  }
+
+  &__content {
+
+    &--back {
+      text-decoration: none;
+      font-weight: 500;
+      color: v.$blue;
+      display: block;
+      margin-bottom: 3rem;
+    }
+
+    &--text {
+      margin-bottom: 5rem;
+
+      .articles {
+        margin-bottom: 2rem;
+
+        p {
+          color: v.$grey;
+        }
+      }
+
+      .footer-articles {
+        font-style: italic;
+        color: v.$blue;
+      }
     }
   }
 }
