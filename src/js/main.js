@@ -3,6 +3,7 @@ import "./home.js";
 import "./lenis.js";
 import "./conquer-english.js";
 import "./timeline-dot.js";
+import "./posts.js";
 
 // Reproductor Plyr
 import 'plyr/dist/plyr.css'; // estilos por defecto de Plyr
