@@ -51,12 +51,25 @@
     a {
       text-decoration: none;
       color: v.$black;
+      display: block;
+
+      // Accesibilidad teclado
+      &:focus-visible {
+        outline: 3px solid v.$blue;
+        outline-offset: 6px;
+      }
     }
 
     &_article {
       display: flex;
       flex-direction: column;
       gap: 2rem;
+
+      // ANIMACIÓN HOVER LIFT + SHADOW
+      transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+      // Optimiza animaciones, no abusar
+      will-change: transform, box-shadow;
+      border-radius: 1.2rem;
       
       @include mx.breakpoint(tablet) {
         flex-direction: row;
@@ -68,6 +81,12 @@
         align-items: center;
       }
       
+      a:hover & {
+        padding: 2rem;
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, .12);
+        background-color: rgba(0, 0, 0, .015);
+      }
 
       &--img {
         width: 100%;
@@ -77,12 +96,21 @@
           height: 100%;
           object-fit: cover;
           border-radius: 1rem;
+
+          // Animación con hover zoom
+          transition: transform .4s ease;
+          filter: .4 ease;
         }
+      }
+
+      a:hover &--img img {
+          transform: scale(1.05);
+          filter: saturate(105%) contrast(105%);
       }
       
       &--content {
         display: flex;
-        flex-direction: column;
+        flex-direction: column;        
 
         @include mx.breakpoint(tablet) {
           flex: 1 1 75%;
@@ -161,6 +189,16 @@
       }
       
       &_articles {
+        border-radius: 1rem;
+        transition: transform .25s ease, box-shadow .25s ease;
+        will-change: transform, box-shadow;
+
+        // Hover lift
+        a:hover & {
+          padding: 1.5rem;
+          transform: translateY(-4px);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, .10);
+        }
 
         &--img {
           width: 100%;
@@ -169,7 +207,15 @@
           img {
             width: 100%;
             border-radius: 1rem;
+
+            // zoom
+            transition: transform .35s ease, filter .35s ease;
           }
+        }
+
+        a:hover &--img img {
+          transform: scale(1.04);
+          filter: saturate(104%) contrast(104%);
         }
   
         &--date {
@@ -190,6 +236,14 @@
           font-size: 1.7rem;
         }
       }
+    }
+  }
+
+  /* Evitar animaciones si el usuario lo pidió */
+  @media (prefers-reduced-motion: reduce) {
+    .blog * {
+      transition: none !important;
+      animation: none !important;
     }
   }
 }
