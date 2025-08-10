@@ -8,8 +8,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         conquer_english: resolve(__dirname, "conquer-english.html"),
-        about: resolve(__dirname, 'sobre-nosotros.html'),
-        blog: resolve(__dirname, 'blog.html'),
+        about: resolve(__dirname, "sobre-nosotros.html"),
+        blog: resolve(__dirname, "blog.html"),
+        article1: resolve(__dirname, "poder-tecnologia.html"),
       },
     },
   },
