@@ -9,6 +9,7 @@
       content="Conoce la historia, valores y método de Conquer Languages. Profesores nativos y un enfoque innovador para ayudarte a dominar tu próximo idioma." />
     <meta name="author" content="Álvaro Barrena Revilla" />
     <link rel="canonical" href="https://alvarobarrenadev.github.io/conquer-languages-website/sobre-nosotros.html" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/conquer-languages-website/favicon/favicon-96x96.png" sizes="96x96" />
@@ -39,13 +40,14 @@
   </head>
   <body>
     <header>
-      <nav class="menu">
+      <nav class="menu" aria-label="Menú principal">
         <a href="/conquer-languages-website/" class="menu__logo">
-          <img src="img/logo.svg" width="192" alt="Logotipo Conquer Languages" loading="lazy">
+          <img src="img/logo.svg" width="192" alt="Logotipo Conquer Languages" loading="lazy" decoding="async">
         </a>
 
         <!-- Toggle sólo mobile -->
-        <button class="menu__toggle" aria-label="Abrir menú" aria-controls="menu-mobile" aria-expanded="false">
+        <button class="menu__toggle" aria-label="Abrir menú de navegación" aria-controls="menu-mobile"
+          aria-expanded="false">
           <span class="icon-wrapper">
             <!-- Ícono hamburguesa -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#6ca5bc"
@@ -66,9 +68,9 @@
             <li class="has-submenu">
               <!-- Botón para el submenu -->
               <button class="submenu__toggle" aria-expanded="false" aria-controls="submenu-idiomas"
-                aria-label="Abrir idiomas">
+                aria-label="Abrir submenú de idiomas">
                 Idiomas
-                <svg width="24" height="24" viewBox="0 0 24 24">
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6 9l6 6 6-6" />
                 </svg>
               </button>
@@ -157,90 +159,95 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-wrapper">
-          <div class="footer__link_wrapper">
+          <div class="footer__link_wrapper" role="navigation" aria-label="Enlaces del sitio">
             <!-- Enlaces -->
-            <div class="footer__link_wrapper--links">
-              <p class="footer__link_wrapper--links--title">Enlaces</p>
+            <nav class="footer__link_wrapper--links" aria-labelledby="footer-links-title">
+              <h3 class="footer__link_wrapper--links--title" id="footer-links-title">Enlaces</h3>
               <p class="footer__link_wrapper--links--link"><a href="conquer-english.html">Aprende inglés</a></p>
               <p class="footer__link_wrapper--links--link"><a href="sobre-nosotros.html">Sobre nosotros</a></p>
-              <p class="footer__link_wrapper--links--link"><a href="https://agendar.conquerlanguages.com/"
-                  target="_blank">Empezar ahora</a></p>
-            </div>
+              <p class="footer__link_wrapper--links--link"><a href="https://agendar.conquerlanguages.com/" target="_blank"
+                  rel="noopener">Empezar ahora</a></p>
+            </nav>
     
             <!-- Nuestras webs -->
-            <div class="footer__link_wrapper--links">
-              <p class="footer__link_wrapper--links--title">Nuestras webs</p>
-              <p class="footer__link_wrapper--links--link"><a href="https://www.conquerx.com/" target="_blank">ConquerX</a>
-              </p>
-              <p class="footer__link_wrapper--links--link"><a href="https://www.conquerblocks.com/" target="_blank">Conquer
-                  Blocks</a></p>
-              <p class="footer__link_wrapper--links--link"><a href="https://www.formacioneninversion.com/"
-                  target="_blank">Conquer Finance</a></p>
-            </div>
+            <nav class="footer__link_wrapper--links" aria-labelledby="footer-webs-title">
+              <h3 class="footer__link_wrapper--links--title" id="footer-webs-title">Nuestras webs</h3>
+              <p class="footer__link_wrapper--links--link"><a href="https://www.conquerx.com/" target="_blank"
+                  rel="noopener">ConquerX</a></p>
+              <p class="footer__link_wrapper--links--link"><a href="https://www.conquerblocks.com/" target="_blank"
+                  rel="noopener">Conquer Blocks</a></p>
+              <p class="footer__link_wrapper--links--link"><a href="https://www.formacioneninversion.com/" target="_blank"
+                  rel="noopener">Conquer Finance</a></p>
+            </nav>
     
             <!-- Blog -->
-            <div class="footer__link_wrapper--links">
-              <p class="footer__link_wrapper--links--title">Blog</p>
-              <p class="footer__link_wrapper--links--link"><a href="cinco-consejos-ingles.html" target="_blank">Claves para
-                  aprender inglés</a>
+            <nav class="footer__link_wrapper--links" aria-labelledby="footer-blog-title">
+              <h3 class="footer__link_wrapper--links--title" id="footer-blog-title">Blog</h3>
+              <p class="footer__link_wrapper--links--link"><a href="cinco-consejos-ingles.html">Claves para aprender
+                  inglés</a>
               </p>
-              <p class="footer__link_wrapper--links--link"><a href="poder-tecnologia.html" target="_blank">El poder de la
-                  tecnología</a></p>
-              <p class="footer__link_wrapper--links--link"><a href="blog.html" target="_blank">Ver todos los post
-                  &gt;</a></p>
-            </div>
+              <p class="footer__link_wrapper--links--link"><a href="poder-tecnologia.html">El poder de la tecnología</a></p>
+              <p class="footer__link_wrapper--links--link"><a href="blog.html">Ver todos los post &gt;</a></p>
+            </nav>
     
             <!-- Legal -->
-            <div class="footer__link_wrapper--links">
-              <p class="footer__link_wrapper--links--title">Legal</p>
+            <nav class="footer__link_wrapper--links" aria-labelledby="footer-legal-title">
+              <h3 class="footer__link_wrapper--links--title" id="footer-legal-title">Legal</h3>
               <p class="footer__link_wrapper--links--link"><a href="https://www.conquerlanguages.com/politica-de-cookies"
-                  target="_blank">Cookies</a></p>
+                  target="_blank" rel="noopener">Cookies</a></p>
               <p class="footer__link_wrapper--links--link"><a href="https://www.conquerlanguages.com/aviso-legal"
-                  target="_blank">Aviso Legal</a></p>
+                  target="_blank" rel="noopener">Aviso Legal</a></p>
               <p class="footer__link_wrapper--links--link"><a href="https://www.conquerlanguages.com/politica-de-privacidad"
-                  target="_blank">Política de
+                  target="_blank" rel="noopener">Política de
                   privacidad</a></p>
               <p class="footer__link_wrapper--links--link"><a href="https://www.conquerlanguages.com/terminos-y-condiciones"
-                  target="_blank">Terminos y
+                  target="_blank" rel="noopener">Terminos y
                   condiciones</a></p>
-            </div>
+            </nav>
           </div>
     
+          <!-- Redes sociales -->
           <div class="footer__social">
             <a href="/conquer-languages-website/" class="footer__social--brand">
-              <img src="img/logo-footer.svg" alt="" class="footer__social--brand--img">
+              <img src="img/logo-footer.svg" alt="Logotipo de Conquer Languages" loading="lazy" decoding="async"
+                class="footer__social--brand--img">
             </a>
     
-            <div class="footer__social--socialmedia">
+            <div class="footer__social--socialmedia" aria-label="Redes sociales">
               <!-- Facebook -->
               <a href="https://www.facebook.com/profile.php?id=61565412747191&_rdr"
-                class="footer__social--socialmedia--logo" target="_blank">
+                class="footer__social--socialmedia--logo" target="_blank" rel="noopener"
+                aria-label="Facebook de Conquer Languages">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M11.6654 11.2513H13.7487L14.582 7.91797H11.6654V6.2513C11.6654 5.39297 11.6654 4.58464 13.332 4.58464H14.582V1.78464C14.3104 1.7488 13.2845 1.66797 12.2012 1.66797C9.9387 1.66797 8.33203 3.0488 8.33203 5.58464V7.91797H5.83203V11.2513H8.33203V18.3346H11.6654V11.2513Z"
                     fill="#fff" />
                 </svg>
               </a>
+    
               <!-- LinkedIn -->
               <a href="https://www.linkedin.com/school/conquerlanguages/about/" class="footer__social--socialmedia--logo"
-                target="_blank">
+                target="_blank" rel="noopener" aria-label="LinkedIn de Conquer Languages">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M5.78255 4.1675C5.78233 4.60953 5.60652 5.03336 5.29381 5.34577C4.98109 5.65817 4.55708 5.83355 4.11505 5.83333C3.67302 5.83311 3.24919 5.65731 2.93678 5.34459C2.62438 5.03187 2.449 4.60786 2.44922 4.16583C2.44944 3.72381 2.62525 3.29997 2.93796 2.98757C3.25068 2.67516 3.67469 2.49978 4.11672 2.5C4.55875 2.50022 4.98258 2.67603 5.29499 2.98874C5.60739 3.30146 5.78277 3.72547 5.78255 4.1675ZM5.83255 7.0675H2.49922V17.5008H5.83255V7.0675ZM11.0992 7.0675H7.78255V17.5008H11.0659V12.0258C11.0659 8.97583 15.0409 8.6925 15.0409 12.0258V17.5008H18.3326V10.8925C18.3326 5.75083 12.4492 5.9425 11.0659 8.4675L11.0992 7.0675Z"
                     fill="#fff" />
                 </svg>
               </a>
+    
               <!-- Instagram -->
               <a href="https://www.instagram.com/conquerlanguages/" class="footer__social--socialmedia--logo"
-                target="_blank">
+                target="_blank" rel="noopener" aria-label="Instagram de Conquer Languages">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M10.0013 1.66797C12.2655 1.66797 12.548 1.6763 13.4363 1.71797C14.3238 1.75964 14.928 1.8988 15.4596 2.10547C16.0096 2.31714 16.473 2.6038 16.9363 3.0663C17.36 3.48288 17.6879 3.98679 17.8971 4.54297C18.103 5.0738 18.243 5.6788 18.2846 6.5663C18.3238 7.45464 18.3346 7.73714 18.3346 10.0013C18.3346 12.2655 18.3263 12.548 18.2846 13.4363C18.243 14.3238 18.103 14.928 17.8971 15.4596C17.6885 16.0161 17.3606 16.5202 16.9363 16.9363C16.5196 17.3599 16.0157 17.6878 15.4596 17.8971C14.9288 18.103 14.3238 18.243 13.4363 18.2846C12.548 18.3238 12.2655 18.3346 10.0013 18.3346C7.73714 18.3346 7.45464 18.3263 6.5663 18.2846C5.6788 18.243 5.07464 18.103 4.54297 17.8971C3.98657 17.6884 3.48257 17.3604 3.0663 16.9363C2.64247 16.5198 2.31458 16.0159 2.10547 15.4596C1.8988 14.9288 1.75964 14.3238 1.71797 13.4363C1.6788 12.548 1.66797 12.2655 1.66797 10.0013C1.66797 7.73714 1.6763 7.45464 1.71797 6.5663C1.75964 5.67797 1.8988 5.07464 2.10547 4.54297C2.314 3.98645 2.64197 3.4824 3.0663 3.0663C3.48269 2.64233 3.98666 2.31441 4.54297 2.10547C5.07464 1.8988 5.67797 1.75964 6.5663 1.71797C7.45464 1.6788 7.73714 1.66797 10.0013 1.66797ZM10.0013 5.83464C8.89623 5.83464 7.83643 6.27362 7.05502 7.05502C6.27362 7.83643 5.83464 8.89623 5.83464 10.0013C5.83464 11.1064 6.27362 12.1662 7.05502 12.9476C7.83643 13.729 8.89623 14.168 10.0013 14.168C11.1064 14.168 12.1662 13.729 12.9476 12.9476C13.729 12.1662 14.168 11.1064 14.168 10.0013C14.168 8.89623 13.729 7.83643 12.9476 7.05502C12.1662 6.27362 11.1064 5.83464 10.0013 5.83464ZM15.418 5.6263C15.418 5.35004 15.3082 5.08508 15.1129 4.88973C14.9175 4.69438 14.6526 4.58464 14.3763 4.58464C14.1 4.58464 13.8351 4.69438 13.6397 4.88973C13.4444 5.08508 13.3346 5.35004 13.3346 5.6263C13.3346 5.90257 13.4444 6.16752 13.6397 6.36287C13.8351 6.55822 14.1 6.66797 14.3763 6.66797C14.6526 6.66797 14.9175 6.55822 15.1129 6.36287C15.3082 6.16752 15.418 5.90257 15.418 5.6263ZM10.0013 7.5013C10.6643 7.5013 11.3002 7.76469 11.7691 8.23354C12.2379 8.70238 12.5013 9.33826 12.5013 10.0013C12.5013 10.6643 12.2379 11.3002 11.7691 11.7691C11.3002 12.2379 10.6643 12.5013 10.0013 12.5013C9.33826 12.5013 8.70238 12.2379 8.23354 11.7691C7.76469 11.3002 7.5013 10.6643 7.5013 10.0013C7.5013 9.33826 7.76469 8.70238 8.23354 8.23354C8.70238 7.76469 9.33826 7.5013 10.0013 7.5013Z"
                     fill="white" />
                 </svg>
               </a>
+    
               <!-- TikTok -->
-              <a href="https://www.tiktok.com/@conquerlanguages" class="footer__social--socialmedia--logo" target="_blank">
+              <a href="https://www.tiktok.com/@conquerlanguages" class="footer__social--socialmedia--logo" target="_blank"
+                rel="noopener" aria-label="TikTok de Conquer Languages">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                   <path
                     d="M544.5 273.9C500.5 274 457.5 260.3 421.7 234.7L421.7 413.4C421.7 446.5 411.6 478.8 392.7 506C373.8 533.2 347.1 554 316.1 565.6C285.1 577.2 251.3 579.1 219.2 570.9C187.1 562.7 158.3 545 136.5 520.1C114.7 495.2 101.2 464.1 97.5 431.2C93.8 398.3 100.4 365.1 116.1 336C131.8 306.9 156.1 283.3 185.7 268.3C215.3 253.3 248.6 247.8 281.4 252.3L281.4 342.2C266.4 337.5 250.3 337.6 235.4 342.6C220.5 347.6 207.5 357.2 198.4 369.9C189.3 382.6 184.4 398 184.5 413.8C184.6 429.6 189.7 444.8 199 457.5C208.3 470.2 221.4 479.6 236.4 484.4C251.4 489.2 267.5 489.2 282.4 484.3C297.3 479.4 310.4 469.9 319.6 457.2C328.8 444.5 333.8 429.1 333.8 413.4L333.8 64L421.8 64C421.7 71.4 422.4 78.9 423.7 86.2C426.8 102.5 433.1 118.1 442.4 131.9C451.7 145.7 463.7 157.5 477.6 166.5C497.5 179.6 520.8 186.6 544.6 186.6L544.6 274z"
@@ -251,7 +258,8 @@
     
             <p class="footer__social--copyright">Copyright &copy;
               <script>document.write(new Date().getFullYear());</script>
-              <a href="https://www.conquerx.com/" target="_blank" class="footer__social--copyright--link">By ConquerX</a>
+              <a href="https://www.conquerx.com/" target="_blank" rel="noopener" class="footer__social--copyright--link">By
+                ConquerX</a>
             </p>
           </div>
         </div>
