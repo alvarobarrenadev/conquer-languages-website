@@ -1,6 +1,6 @@
 # Conquer Languages – Website
 
-🔗 **Live Site**: [https://yourusername.github.io/conquer-languages-website](https://alvarobarrenadev.github.io/conquer-languages-website/)
+🔗 **Live Site**: [https://alvarobarrenadev.github.io/conquer-languages-website/](https://alvarobarrenadev.github.io/conquer-languages-website/)
 
 A static multi-page website built with **Vite**, **semantic HTML**, **SCSS (7-1 architecture + BEM)**, and **modular JavaScript**. 
 This is a custom clone of the official [Conquer Languages](https://www.conquerlanguages.com) website, adapted to my own design preferences. 
